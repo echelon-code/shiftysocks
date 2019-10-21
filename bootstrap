@@ -88,6 +88,9 @@ start_container(){
   KCPTUN_CRYPT=${KCPTUN_CRYPT:-aes}
   echo "KCPTUN crypt: $KCPTUN_CRYPT"
 
+  KCPTUN_MODE=${KCPTUN_MODE:-fast3}
+  echo "KCPTUN mode: $KCPTUN_MODE"
+
   echo
 
   COMMAND_LINE=$(generate_dood_command \
