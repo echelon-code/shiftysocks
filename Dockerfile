@@ -1,12 +1,12 @@
 # This dockerfile uses the ubuntu image
 # VERSION 1 - EDITION 1
-# Author: Yale Huang
+# Author: Samuel Lauridsen
 # Command format: Instruction [arguments / command] ..
 
 # Base image to use, this must be set as the first line
 FROM alpine:edge
 
-LABEL maintainer="Yale Huang <calvino.huang@gmail.com>"
+LABEL maintainer="Samuel Lauridsen admin@echelon.network"
 
 # Build arguments
 ARG BUILD_DATE

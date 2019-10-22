@@ -1,12 +1,6 @@
 # kcp-shadowsocks-server
 
-[![](http://dockeri.co/image/yaleh/kcp-shadowsocks-server)](https://hub.docker.com/r/yaleh/kcp-shadowsocks-server/builds/)
 
-[![Docker Build Status](https://img.shields.io/docker/build/yaleh/kcp-shadowsocks-server.svg)](https://hub.docker.com/r/yaleh/kcp-shadowsocks-server/) [![Docker Automated build](https://img.shields.io/docker/automated/yaleh/kcp-shadowsocks-server.svg)](https://hub.docker.com/r/yaleh/kcp-shadowsocks-server/) [![Docker Stars](https://img.shields.io/docker/stars/yaleh/kcp-shadowsocks-server.svg)](https://hub.docker.com/r/yaleh/kcp-shadowsocks-server/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/yaleh/kcp-shadowsocks-server.svg)](https://hub.docker.com/r/yaleh/kcp-shadowsocks-server/) [![GitHub commits](https://img.shields.io/github/commits-since/yaleh/kcp-shadowsocks-server/init.svg)](https://github.com/yaleh/kcp-shadowsocks-server) [![ImageLayers Size](https://img.shields.io/imagelayers/image-size/yaleh/kcp-shadowsocks-server/latest.svg)](https://hub.docker.com/r/yaleh/kcp-shadowsocks-server/) [![ImageLayers Layers](https://img.shields.io/imagelayers/layers/yaleh/kcp-shadowsocks-server/latest.svg)](https://hub.docker.com/r/yaleh/kcp-shadowsocks-server/)
-
-A Docker image of KCPTUN + Shadowsocks, auto-generated parameters and
-`ss://` links.
 
 ## Quick Start
 
@@ -24,14 +18,14 @@ by ``Bootstrap`` automatically. And you will see the Shadowsocks links:
 
 ```
 Current container: 2de5d0362e16ef4b134e471ec9ce7ecf47624496e5d92a4c404aaf669108d2d4
-Current image: yaleh/kcp-shadowsocks-server:runit
+Current image:
 Network interface: wlp58s0
 Host name: 172.18.0.25
 Exported Shadowsocks port: 15858
 Exported KCPTUN port: 9974
-Password: ohHoh4bi
+Password: Z0lT4N5N
 
-docker run -d --restart=always --name ss-15858-kcp-9974 -e SS_PASSWORD=ohHoh4bi -e SS_METHOD=aes-256-cfb -e KCPTUN_MODE=normal -e KCPTUN_PASSWORD=ohHoh4bi -e KCPTUN_SNDWND=256 -e KCPTUN_RCVWND=256 -e SS_LINK=ss://YWVzLTI1Ni1jZmI6b2hIb2g0YmlAMTcyLjE4LjAuMjU6MTU4NTg=#SS:172.18.0.25:15858 -e KCPTUN_SS_LINK=ss://YWVzLTI1Ni1jZmI6b2hIb2g0Ymk=@172.18.0.25:9974?plugin=kcptun%3Bmode%3Dnormal%3Brcvwnd%3D256%3Bsndwnd%3D256%3Bkey%3DohHoh4bi%3Bmtu%3D1350#KCP_SS%3A172.18.0.25%3A9974 -p 15858:8338/tcp -p 9974:41111/udp yaleh/kcp-shadowsocks-server:runit
+docker run -d --restart=always --name ss-15858-kcp-9974 -e SS_PASSWORD=Z0lT4N5N -e SS_METHOD=aes-256-cfb -e KCPTUN_MODE=normal -e KCPTUN_PASSWORD=Z0lT4N5N -e KCPTUN_SNDWND=256 -e KCPTUN_RCVWND=256 -e SS_LINK=ss://YWVzLTI1Ni1jZmI6b2hIb2g0YmlAMTcyLjE4LjAuMjU6MTU4NTg=#SS:172.18.0.25:15858 -e KCPTUN_SS_LINK=ss://YWVzLTI1Ni1jZmI6b2hIb2g0Ymk=@172.18.0.25:9974?plugin=kcptun%3Bmode%3Dnormal%3Brcvwnd%3D256%3Bsndwnd%3D256%3Bkey%3DZ0lT4N5N%3Bmtu%3D1350#KCP_SS%3A172.18.0.25%3A9974 -p 15858:8338/tcp -p 9974:41111/udp yaleh/kcp-shadowsocks-server:runit
 
 Worker container: 29d1d7206b99a809520792382a99ee350b2b8030e4bdf5566577e017e1dd8a5e
 Worker container name: ss-15858-kcp-9974
@@ -44,9 +38,9 @@ QR code: https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=ss%3A//YW
 
 ----
 
-KCPTUN SS link (for Android client only): ss://YWVzLTI1Ni1jZmI6b2hIb2g0Ymk=@172.18.0.25:9974?plugin=kcptun%3Bmode%3Dnormal%3Brcvwnd%3D256%3Bsndwnd%3D256%3Bkey%3DohHoh4bi%3Bmtu%3D1350#KCP_SS%3A172.18.0.25%3A9974
+KCPTUN SS link (for Android client only): ss://YWVzLTI1Ni1jZmI6b2hIb2g0Ymk=@172.18.0.25:9974?plugin=kcptun%3Bmode%3Dnormal%3Brcvwnd%3D256%3Bsndwnd%3D256%3Bkey%3DZ0lT4N5N%3Bmtu%3D1350#KCP_SS%3A172.18.0.25%3A9974
 
-QR code: https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=ss%3A//YWVzLTI1Ni1jZmI6b2hIb2g0Ymk%3D%40172.18.0.25%3A9974%3Fplugin%3Dkcptun%253Bmode%253Dnormal%253Brcvwnd%253D256%253Bsndwnd%253D256%253Bkey%253DohHoh4bi%253Bmtu%253D1350%23KCP_SS%253A172.18.0.25%253A9974
+QR code: https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=ss%3A//YWVzLTI1Ni1jZmI6b2hIb2g0Ymk%3D%40172.18.0.25%3A9974%3Fplugin%3Dkcptun%253Bmode%253Dnormal%253Brcvwnd%253D256%253Bsndwnd%253D256%253Bkey%253DZ0lT4N5N%253Bmtu%253D1350%23KCP_SS%253A172.18.0.25%253A9974
 
 ```
 
@@ -79,6 +73,17 @@ docker run -t -i --rm --network=host \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -e KCPTUN_CRYPT=none \
   yaleh/kcp-shadowsocks-server bootstrap
+```
+
+KCPTUN crypt option needs to be set at the client also to make it work.
+
+The KCPTUN mode can also be changed from the "fast" default to fast2 or fast3:
+
+```bash
+docker run -t -i --rm --network=host \
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ -e KCPTUN_MODE=fast3 \
+ yaleh/kcp-shadowsocks-server bootstrap
 ```
 
 KCPTUN crypt option needs to be set at the client also to make it work.
