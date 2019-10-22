@@ -1,6 +1,8 @@
 # kcp-shadowsocks-server
 
+## Clients
 
+I would recommend using Google's Outline software as it is multiplatform and stable. It is also free. See information page here: https://getoutline.org
 
 ## Quick Start
 
