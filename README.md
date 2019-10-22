@@ -10,7 +10,7 @@ parameter manually. Just copy following line to your terminal and execute it:
 ```bash
 docker run -t -i --rm --network=host \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  yaleh/kcp-shadowsocks-server bootstrap
+  n0cebo/shiftysocks bootstrap
 ```
 
 The worker container will be setup in seconds. Ports and passwords are generated
@@ -25,7 +25,7 @@ Exported Shadowsocks port: 15858
 Exported KCPTUN port: 9974
 Password: Z0lT4N5N
 
-docker run -d --restart=always --name ss-15858-kcp-9974 -e SS_PASSWORD=Z0lT4N5N -e SS_METHOD=aes-256-cfb -e KCPTUN_MODE=normal -e KCPTUN_PASSWORD=Z0lT4N5N -e KCPTUN_SNDWND=256 -e KCPTUN_RCVWND=256 -e SS_LINK=ss://YWVzLTI1Ni1jZmI6b2hIb2g0YmlAMTcyLjE4LjAuMjU6MTU4NTg=#SS:172.18.0.25:15858 -e KCPTUN_SS_LINK=ss://YWVzLTI1Ni1jZmI6b2hIb2g0Ymk=@172.18.0.25:9974?plugin=kcptun%3Bmode%3Dnormal%3Brcvwnd%3D256%3Bsndwnd%3D256%3Bkey%3DZ0lT4N5N%3Bmtu%3D1350#KCP_SS%3A172.18.0.25%3A9974 -p 15858:8338/tcp -p 9974:41111/udp yaleh/kcp-shadowsocks-server:runit
+docker run -d --restart=always --name ss-15858-kcp-9974 -e SS_PASSWORD=Z0lT4N5N -e SS_METHOD=aes-256-cfb -e KCPTUN_MODE=normal -e KCPTUN_PASSWORD=Z0lT4N5N -e KCPTUN_SNDWND=256 -e KCPTUN_RCVWND=256 -e SS_LINK=ss://YWVzLTI1Ni1jZmI6b2hIb2g0YmlAMTcyLjE4LjAuMjU6MTU4NTg=#SS:172.18.0.25:15858 -e KCPTUN_SS_LINK=ss://YWVzLTI1Ni1jZmI6b2hIb2g0Ymk=@172.18.0.25:9974?plugin=kcptun%3Bmode%3Dnormal%3Brcvwnd%3D256%3Bsndwnd%3D256%3Bkey%3DZ0lT4N5N%3Bmtu%3D1350#KCP_SS%3A172.18.0.25%3A9974 -p 15858:8338/tcp -p 9974:41111/udp n0cebo/shiftysocks:runit
 
 Worker container: 29d1d7206b99a809520792382a99ee350b2b8030e4bdf5566577e017e1dd8a5e
 Worker container name: ss-15858-kcp-9974
@@ -72,7 +72,7 @@ docker inspect -f '{{range $_, $e := .Config.Env}}{{println $e}}{{end}}' <WORKDE
 docker run -t -i --rm --network=host \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -e KCPTUN_CRYPT=none \
-  yaleh/kcp-shadowsocks-server bootstrap
+  n0cebo/shiftysocks bootstrap
 ```
 
 KCPTUN crypt option needs to be set at the client also to make it work.
@@ -83,7 +83,7 @@ The KCPTUN mode can also be changed from the "fast" default to fast2 or fast3:
 docker run -t -i --rm --network=host \
  -v /var/run/docker.sock:/var/run/docker.sock \
  -e KCPTUN_MODE=fast3 \
- yaleh/kcp-shadowsocks-server bootstrap
+ n0cebo/shiftysocks bootstrap
 ```
 
 KCPTUN crypt option needs to be set at the client also to make it work.
@@ -98,7 +98,7 @@ running worker containers.
 ## Manually
 
 ```bash
-docker run -d --restart=always -e 'SS_PASSWORD=SHADOWSOCKS_PASSWORD' -e 'KCPTUN_PASSWORD=balancing' -p 8338:8338/tcp -p 41111:41111/udp --name=my-kcp-ss yaleh/kcp-shadowsocks-server
+docker run -d --restart=always -e 'SS_PASSWORD=SHADOWSOCKS_PASSWORD' -e 'KCPTUN_PASSWORD=balancing' -p 8338:8338/tcp -p 41111:41111/udp --name=my-kcp-ss n0cebo/shiftysocks
 ```
 
 * SS_PASSWORD: password for Shadowsocks
