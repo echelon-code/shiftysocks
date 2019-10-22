@@ -1,4 +1,4 @@
-# kcp-shadowsocks-server
+# shiftysocks
 
 ## Clients
 
