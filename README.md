@@ -1,8 +1,11 @@
 # shiftysocks
 
+Utilizes a very interesting new tunnel software KCPTUN and combines it with a socks5 proxy for easy use. Can be used to improve latency or for obfuscation purposes. 
+
+More about KCPTUN:https://github.com/xtaci/kcptun
 ## Clients
 
-I would recommend using Google's Outline software as it is multiplatform and stable. It is also free. See information page here: https://getoutline.org
+Outline: https://getoutline.org
 
 ## Quick Start
 
